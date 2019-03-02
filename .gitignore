@@ -1,1 +1,3 @@
 shelved/
+*.env
+node_modules/
