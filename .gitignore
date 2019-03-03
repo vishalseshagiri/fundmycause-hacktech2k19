@@ -4,3 +4,5 @@ node_modules/
 hack_env/
 ebay.yaml
 test.py
+templates
+scratch_notebooks
