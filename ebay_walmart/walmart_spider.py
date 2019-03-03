@@ -36,9 +36,10 @@ def mainf(url):
 
     process.crawl(RedSpider, url = url)
     process.start() # Start crawling
-    return wprice
+    return wprice, img
 
 if __name__ == '__main__':
     url = 'https://www.walmart.com/search/?query=expensive%20camp%20tent%20'
-    wprice = mainf(url)
+    wprice,img = mainf(url)
     print("Walmart Price:",wprice)
+    print("Img Src:",img)
