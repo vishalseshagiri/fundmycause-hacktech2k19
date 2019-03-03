@@ -2,6 +2,7 @@ import scrapy
 from scrapy.crawler import CrawlerProcess
 
 wprice = 0
+img = ''
 # Scrapy Spider definition
 class RedSpider(scrapy.Spider):
     name = "red"
@@ -12,12 +13,14 @@ class RedSpider(scrapy.Spider):
 
     # Main parser
     def parse(self, response):
-        global wprice
+        global wprice, img
         name = ' '.join(response.xpath('//*[@id="searchProductResult"]/ul/li[1]/div/div[2]/div[5]/div/span[2]/a/span/mark/text()').extract())
         wprice = response.xpath('//*[@id="searchProductResult"]/ul/li[1]/div/div[2]/div[7]/div/span/div/div/div/span/span/span[2]/text()')
+        img = response.xpath('//*[@id="searchProductResult"]/ul/li[1]/div/div[2]/div[2]/div/a/img/src')
         if(name == '' or name == ' '):
             name = ' '.join(response.xpath('//*[@id="searchProductResult"]/div/div[1]/div/div/div[2]/div[2]/div[1]/div[2]/span[2]/a/span/mark/text()').extract())
             wprice = response.xpath('//*[@id="searchProductResult"]/div/div[1]/div/div/div[2]/div[2]/div[2]/span/div/div/div/span/span/span[2]/text()').extract_first()
+            img = response.xpath('//*[@id="searchProductResult"]/div/div[1]/div/div/div[2]/div[1]/div/a/img/src')
 
 def mainf(url):
     # Crawler Settings
