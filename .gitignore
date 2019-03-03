@@ -1,3 +1,6 @@
 shelved/
 *.env
 node_modules/
+hack_env/
+ebay.yaml
+test.py
