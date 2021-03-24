@@ -72,7 +72,7 @@ pyzmq==18.0.0
 qtconsole==4.4.3
 queuelib==1.5.0
 requests==2.21.0
-rsa==4.0
+rsa==4.1
 Scrapy==1.6.0
 Send2Trash==1.5.0
 service-identity==18.1.0
